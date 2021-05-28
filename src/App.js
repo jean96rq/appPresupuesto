@@ -26,7 +26,7 @@ function App() {
     const presupuestoRestante = restante - gasto.cantidad
     guardarRestante(presupuestoRestante)
     guardarCrearGasto(false)
-  }, [gasto])
+  }, [gasto, crearGasto,gastos,restante])
 
 
 

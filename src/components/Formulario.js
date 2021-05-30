@@ -54,6 +54,7 @@ function Formulario({guardarGasto, guardarCrearGasto}) {
                     type="number"
                     className="form-control"
                     aria-describedby="emailHelp"
+                    placeholder = {0}
                     value = {cantidad}
                     onChange={e => guardarCantidad(parseInt(e.target.value,10))}
                 />

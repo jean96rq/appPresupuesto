@@ -16,17 +16,18 @@ function App() {
   const [crearGasto, guardarCrearGasto] = useState(false)
 
 
-  useEffect(()=>{
-    if(crearGasto){
+  useEffect(() => {
+    if (crearGasto) {
       guardarGastos([
         ...gastos,
         gasto
       ])
+
+      const presupuestoRestante = restante - gasto.cantidad;
+      guardarRestante(presupuestoRestante)
+      guardarCrearGasto(false)
     }
-    const presupuestoRestante = restante - gasto.cantidad
-    guardarRestante(presupuestoRestante)
-    guardarCrearGasto(false)
-  }, [gasto, crearGasto,gastos,restante])
+  }, [gasto, crearGasto, gastos, restante]);
 
 
 
@@ -47,17 +48,17 @@ function App() {
             <div className="row mb-3 mt-3">
               <div className="col-md-6">
                 <Formulario
-                  guardarGasto = {guardarGasto}
-                  guardarCrearGasto = {guardarCrearGasto}
+                  guardarGasto={guardarGasto}
+                  guardarCrearGasto={guardarCrearGasto}
                 />
               </div>
               <div className="col-md-6">
-                <Listado 
-                  gastos = {gastos}
+                <Listado
+                  gastos={gastos}
                 />
-                <ControlPresupuesto 
-                  presupuesto = {presupuesto}
-                  restante = {restante}
+                <ControlPresupuesto
+                  presupuesto={presupuesto}
+                  restante={restante}
                 />
               </div>
             </div>

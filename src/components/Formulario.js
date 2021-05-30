@@ -43,7 +43,7 @@ function Formulario({guardarGasto, guardarCrearGasto}) {
                     aria-describedby="emailHelp"
                     placeholder="Ej. Comida"
                     value ={nombre}
-                    onChange={e => guardarNombre(e.target.value,10)}
+                    onChange={e => guardarNombre(e.target.value)}
                 />
             </div>
             <div className="mb-3">
@@ -55,7 +55,7 @@ function Formulario({guardarGasto, guardarCrearGasto}) {
                     className="form-control"
                     aria-describedby="emailHelp"
                     value = {cantidad}
-                    onChange={e => guardarCantidad(parseInt(e.target.value))}
+                    onChange={e => guardarCantidad(parseInt(e.target.value,10))}
                 />
             </div>
             <input
